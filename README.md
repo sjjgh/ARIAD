@@ -7,7 +7,7 @@
 
 [Method](docs/method.md) · [Experiments](#experimental-results) · [Reproduce](docs/reproducibility.md) · [Research text](docs/research/README.md)
 
-## Learn the connections. Skip the exhaustive rebuild.
+## Progressively learning the connections during training. No exhaustive rebuild.
 
 ![ARIAD learns the teacher's neighbor structure: teacher match rises from about 3% to 96% over 160 training epochs](ariad_single_space/highlight/kNN_convergence.png)
 
