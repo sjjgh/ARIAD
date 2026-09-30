@@ -7,6 +7,36 @@
 
 [Method](docs/method.md) · [Experiments](#experimental-results) · [Reproduce](docs/reproducibility.md) · [Research text](docs/research/README.md)
 
+## Learn the connections. Skip the exhaustive rebuild.
+
+![ARIAD learns the teacher's neighbor structure: teacher match rises from about 3% to 96% over 160 training epochs](ariad_single_space/highlight/kNN_convergence.png)
+
+**From tangled connections to the teacher's neighborhood structure — with 96.8% fewer search-score evaluations.**
+
+In this attention-like teacher–student task, ARIAD starts with a random neighbor
+graph and learns from the teacher's output values, without being given the
+teacher's edges. As the embeddings change, it keeps updating its k-NN graph
+through local candidate search instead of rebuilding it by exhaustive all-pairs
+search every epoch. By epoch 160, **teacher-neighbor match rises from about 3%
+to 96%** across all 2,006 nodes.
+
+| Work per training step | ARIAD / Exact top-k | Reduction |
+|---|---:|---:|
+| **Search-score evaluations** | **3.19%** | **96.8% fewer** |
+| **Estimated total FLOPs** — projections + attention + search | **8.98%** | **91.0% less** |
+
+*N=2,006, k=16, seed 0; 102 nodes shown, match measured over all nodes.
+Green edges match the teacher; red edges do not. FLOPs are model estimates,
+not measured speedups. This illustration uses a separate configuration from
+the experimental sweeps below.*
+
+[Figure setup and reproduction](ariad_single_space/highlight/README.md)
+· [Cost calculation](ariad_single_space/highlight/cost_check.py)
+
+> **Research status:** ARIAD is an ongoing research project. This release includes
+> the current implementation and initial experimental results. Additional
+> experiments and manuscript preparation are in progress.
+
 ARIAD maintains a small neighbor graph as representations change during training.
 Each step retains the current neighbors, proposes candidates through local graph
 paths, and reranks them using the current embeddings. Sparse attention then runs
