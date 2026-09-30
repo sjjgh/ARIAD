@@ -1,0 +1,1 @@
+{"n": 2000, "method": "dense", "seed": 2, "epochs": 500, "tracked": false, "status": "ok", "final": {"epoch": 500, "mse": 0.0005272891721688211, "recall": 0.88396875, "match_exhaustive": 1.0, "match_true": 0.88396875, "replace_pct": null}, "k_eval": 32, "seconds": 2.2523958683013916}

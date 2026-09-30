@@ -1,0 +1,1 @@
+{"n": 10000, "method": "exact_topk", "seed": 1, "epochs": 500, "tracked": false, "status": "ok", "final": {"epoch": 500, "mse": 0.00010689246119000018, "recall": 0.955378125, "match_exhaustive": 1.0, "match_true": 0.955378125, "replace_pct": null}, "k_eval": 32, "seconds": 12.763133764266968}

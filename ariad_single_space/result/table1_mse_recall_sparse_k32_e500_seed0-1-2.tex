@@ -1,0 +1,18 @@
+\begin{table}[t]
+\centering
+\caption{Final-epoch MSE and Recall@32 (sparse top-32 teacher, $k=32$, 500 epochs; mean $\pm$ std over 3 training seeds).}
+\small
+\begin{tabular}{r ccc ccc}
+\toprule
+ & \multicolumn{3}{c}{MSE ($\times 10^{-4}$)} & \multicolumn{3}{c}{Recall@32} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+$N$ & Dense & Exact top-k & ARIAD & Dense & Exact top-k & ARIAD \\
+\midrule
+1,008 & 4.49$\pm$0.24 & 4.32$\pm$0.07 & 4.36$\pm$0.14 & 0.8155$\pm$0.0010 & 0.8079$\pm$0.0027 & 0.8031$\pm$0.0074 \\
+2,000 & 5.44$\pm$0.09 & 4.79$\pm{<}$0.01 & 4.79$\pm{<}$0.01 & 0.9295$\pm$0.0002 & 0.9303$\pm{<}$0.0001 & 0.9291$\pm{<}$0.0001 \\
+5,008 & 4.15$\pm$0.02 & 2.30$\pm{<}$0.01 & 2.31$\pm{<}$0.01 & 0.9554$\pm$0.0001 & 0.9583$\pm{<}$0.0001 & 0.9503$\pm$0.0001 \\
+10,000 & 6.70$\pm{<}$0.01 & 1.78$\pm{<}$0.01 & 1.82$\pm{<}$0.01 & 0.9629$\pm{<}$0.0001 & 0.9686$\pm{<}$0.0001 & 0.9463$\pm$0.0003 \\
+20,000 & 11.85$\pm{<}$0.01 & 0.96$\pm{<}$0.01 & 1.11$\pm{<}$0.01 & 0.9680$\pm{<}$0.0001 & 0.9767$\pm{<}$0.0001 & 0.9276$\pm$0.0002 \\
+\bottomrule
+\end{tabular}
+\end{table}

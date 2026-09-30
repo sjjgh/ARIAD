@@ -1,0 +1,12 @@
+\clearpage
+\setcounter{page}{1}
+\maketitlesupplementary
+
+\section{Single-Space Experimental Details}
+\label{sec:single-details}
+The arithmetic model used in Fig.~\ref{fig:single-cost} is
+\begin{align}
+F={}&6N d_{\mathrm{in}}(d_z+d_v)\nonumber\\
+ &+6P_{\mathrm{attn}}(d_z+d_v)+2P_{\mathrm{search}}d_z,
+\end{align}
+where $d_{\mathrm{in}}=128$, $d_z=d_v=64$, and $(P_{\mathrm{attn}},P_{\mathrm{search}})$ is $(N^2,0)$ for Dense, $(Nk,N^2)$ for Exact, and $(Nk,NC_{\mathrm{scored}})$ for ARIAD. A multiply-add counts as two FLOPs, and differentiable forward/backward work is approximated as three forward computations. Counts include scored slots later masked as duplicates or self-links. Exact search and audits are chunked over 4096 query rows; only training search enters $F$. ARIAD's incoming buffer uses random nonself padding when incoming edges do not fill its capacity. The graph is refreshed once per training forward using detached embeddings and is reused during evaluation after the optimizer update; thus current-graph recall includes this one-update lag.

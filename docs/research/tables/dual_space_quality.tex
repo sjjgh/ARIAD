@@ -1,0 +1,21 @@
+\begin{table*}[t]
+\centering
+\caption{Dual-space quality after 500 steps with independent query/key projections and a frozen value projection. MSE is measured on the training nodes; teacher match@32 is the mean overlap fraction with the teacher top-32 set. Entries are mean $\pm$ sample standard deviation over three paired training seeds on one fixed dataset per $N$. ``$<$'' denotes a standard deviation below display precision. Dense's top-32 is diagnostic only. ARIAD uses 480 search slots per row across three graphs.}
+\label{tab:dual-quality}
+\footnotesize
+\setlength{\tabcolsep}{3.5pt}
+\begin{tabular}{r ccc ccc}
+\toprule
+ & \multicolumn{3}{c}{MSE ($\times10^{-4}$)} & \multicolumn{3}{c}{Teacher match@32} \\
+\cmidrule(lr){2-4}\cmidrule(lr){5-7}
+$N$ & Dense & Exact top-$k$ & ARIAD & Dense & Exact top-$k$ & ARIAD \\
+\midrule
+1,008 & 7.80$\pm$0.02 & 7.81$\pm$0.01 & 7.88$\pm$0.03 & 0.7046$\pm$0.0020 & 0.6847$\pm$0.0118 & 0.6899$\pm$0.0081 \\
+2,000 & 5.31$\pm$0.04 & 5.40$\pm$0.08 & 5.45$\pm$0.04 & 0.8793$\pm$0.0041 & 0.8587$\pm$0.0080 & 0.8556$\pm$0.0045 \\
+5,008 & 1.65$\pm{<}$0.01 & 1.52$\pm{<}$0.01 & 1.52$\pm{<}$0.01 & 0.9435$\pm{<}$0.0001 & 0.9437$\pm{<}$0.0001 & 0.9436$\pm{<}$0.0001 \\
+10,000 & 1.40$\pm{<}$0.01 & 1.07$\pm{<}$0.01 & 1.07$\pm{<}$0.01 & 0.9551$\pm{<}$0.0001 & 0.9554$\pm{<}$0.0001 & 0.9550$\pm{<}$0.0001 \\
+20,000 & 1.30$\pm{<}$0.01 & 0.52$\pm{<}$0.01 & 0.52$\pm{<}$0.01 & 0.9672$\pm{<}$0.0001 & 0.9700$\pm{<}$0.0001 & 0.9680$\pm$0.0009 \\
+\bottomrule
+\end{tabular}
+
+\end{table*}

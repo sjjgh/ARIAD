@@ -1,0 +1,1 @@
+{"n": 2000, "method": "ariad", "seed": 2, "epochs": 500, "tracked": false, "status": "ok", "final": {"epoch": 500, "mse": 0.0005471402546390891, "recall": 0.854734375, "match_exhaustive": 0.996875, "match_true": 0.854734375, "replace_pct": null}, "k_eval": 32, "seconds": 12.163138389587402}
